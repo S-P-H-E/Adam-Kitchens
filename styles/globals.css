@@ -2,26 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+/* Assuming the font files are in the 'public/fonts' directory of your Next.js project */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+@font-face {
+    font-family: 'GT Walsheim';
+    src: url('/fonts/GT Walsheim Bold.ttf') format('truetype');
+    /* Add more font formats if needed, like .woff2, .woff, etc. */
+    font-weight: bold;
+    font-style: normal;
+}  
 
+* {
+    --highlight: #ffffff;
+    --indigo: #6266F0;
+    --text: #222222;
+    --bg: white;
+}
+  
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    color: var(--text);
+    font-family: 'GT Walsheim';
+    background-color: var(--bg);
+}
+
+.mask {
+    -webkit-mask-image: linear-gradient( white 50%, white 50%);
+    mask-image: linear-gradient(white 50%, white 50%);
+}
+
+/* Hide the default scrollbar */
+::-webkit-scrollbar {
+    display: none;
 }
